@@ -1,3 +1,19 @@
-body{
-  background-color: ghostwhite;
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  width: 80%;
+  height: 700px;
+  margin: 0 auto;
+  color: ghostwhite;
+  font-size: 2em;
+}
+
+.header{
+  display: flex;
+  align-content: space-around;
+  width: 1024px;
+  justify-content: center;
+  margin: 0 auto;
 }
