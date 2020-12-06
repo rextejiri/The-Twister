@@ -1,26 +1,5 @@
 $(() => {
     // declaring all parameters
-
-
-
-
-
-      // console.log(new Date().toUTCString());
-      // let hr = new Date().toUTCString()
-        // let min = time[1]
-        // let sec = time[2]
-        // let timeOfDay = time[3]
-
-      // $('.dt').html(hr);
-      // for (let clock of time) {
-      //   let hr = clock[0]
-      //   let min = clock[1]
-      //   let sec = clock[2]
-      //   let timeOfDay = clock[3]`${hr} h : ${min} m : ${timeOfDay}`
-      //     // $('.dt').html(clock);
-      //     console.log(hr);
-      // }
-
       // time
       let hr = new Date().toUTCString()
       $('.dt').html(hr);
@@ -37,10 +16,10 @@ $(() => {
       // $('dt').html(new Date(data.dt))
       console.log(data);
       // mainTemp
-      $('.temperature').html(data.main.temp + " &#176" + "F");
+      $('.temperature').html(data.main.temp + " &#176" + "F"+" |" + " &#176" + "C");
       $('.pressure').html(data.main.pressure + " &#13169");
       $('.feels_like').html(data.main.feels_like + " &#176" + "F");
-      $('.humidity').html(data.main.humidity + "%");
+      $('.humidity').html(data.main.humidity + " %");
       $('.max').html(data.main.temp_max + " &#176" + "F");
       $('.min').html(data.main.temp_min + " &#176" + "F");
       // cordinates
