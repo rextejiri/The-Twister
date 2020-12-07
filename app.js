@@ -48,7 +48,7 @@ $(() => {
         // console.log(data.snow);
         // looping through weather array
         for (let wArray of weather) {
-          // $mainWeather.html(wArray.main);
+          $mainWeather.html(wArray.main);
           $description.html(wArray.main + " with " + wArray.description);
           let $WeatherIcon = wArray.icon
           console.log($WeatherIcon);
