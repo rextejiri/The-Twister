@@ -86,24 +86,34 @@ button{
   align-self: flex-end;
   margin-right: 48px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
 }
+
+
 
 .infoDisplay{
   width: 274px;
   height: 333px;
   background-color: black;
   border-radius: 23px;
-  align-self: flex-start;
   margin-left: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  margin-left: 80px;
+}
+
+.infoDisplay{
+  display: none;
+}
+
+.wrapper div:first-of-type{
+  display: flex;
 }
 
 .valueDisplay{
@@ -114,4 +124,10 @@ button{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.btn{
+  display: block;
+  box-sizing: border-box;
+  background-color: black;
 }
