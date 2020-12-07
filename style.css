@@ -1,7 +1,7 @@
 .container{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   background-color: black;
   width: 1097px;
@@ -10,7 +10,8 @@
   color: ghostwhite;
   font-size: 1em;
   border-radius: 23px;
-  flex-wrap: wrap;
+  align-content: center;
+  /* flex-wrap: wrap; */
   /* overflow: scroll; */
 }
 
@@ -54,6 +55,7 @@ button{
   justify-content: space-around;
   align-items: center;
   margin-left: 48px;
+  align-self: center;
 }
 
 .Display{
@@ -90,6 +92,8 @@ button{
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
+  align-self: center;
+  margin-left: 66px;
 }
 
 
@@ -130,4 +134,10 @@ button{
   display: block;
   box-sizing: border-box;
   background-color: black;
+}
+.previous{
+  margin-left: 48px;
+}
+.next{
+  margin-right: 33px;
 }

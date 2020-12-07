@@ -1,4 +1,13 @@
 $(() => {
+
+  let currentInfoDisplay = 0;
+
+  $('.next').on('click', () => {
+    $('.wrapper').children().eq(currentInfoDisplay).css('display', 'none');
+    console.log($('.wrapper').children());
+  });
+
+  // next onclick ends here
     // declaring all parameters
 
       // event listener
