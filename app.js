@@ -1,13 +1,34 @@
 $(() => {
-
+  let lastInfoDisplay = $('.wrapper').children().length - 1;
   let currentInfoDisplay = 0;
 
   $('.next').on('click', () => {
+
     $('.wrapper').children().eq(currentInfoDisplay).css('display', 'none');
-    console.log($('.wrapper').children());
+    // currentInfoDisplay++
+    if (currentInfoDisplay < lastInfoDisplay) {
+      currentInfoDisplay++;
+    }else {
+      currentInfoDisplay = 0;
+    }
+    $('.wrapper').children().eq(currentInfoDisplay).css('display', 'flex');
+    // console.log($('.wrapper').children());
   });
 
   // next onclick ends here
+
+  $('.previous').on('click', () => {
+
+    $('.wrapper').children().eq(currentInfoDisplay).css('display', 'none');
+    // currentInfoDisplay++
+    if (currentInfoDisplay > 0) {
+      currentInfoDisplay--;
+    }else {
+      currentInfoDisplay = lastInfoDisplay;
+    }
+    $('.wrapper').children().eq(currentInfoDisplay).css('display', 'flex');
+    // console.log($('.wrapper').children());
+  });
     // declaring all parameters
 
       // event listener
