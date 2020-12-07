@@ -50,25 +50,26 @@ $(() => {
         // let time = new Date(data.sys.sunrise);
         // console.log(time);
         // city info
+        console.log(data);
         $('.cityName').html(data.name);
         $('.countryCode').html(data.sys.country);
         // $('dt').html(new Date(data.dt))
         console.log(data);
         // mainTemp
-        $('.temperature').html(data.main.temp + " &#176" + "F");
-        $('.pressure').html(data.main.pressure + " &#13169");
-        $('.feels_like').html(data.main.feels_like + " &#176" + "F");
-        $('.humidity').html(data.main.humidity + " %");
-        $('.max').html(data.main.temp_max + " &#176" + "F");
-        $('.min').html(data.main.temp_min + " &#176" + "F");
+        $('.temperature').html("Temperature " + "| " + data.main.temp + " &#176" + "F");
+        $('.pressure').html("Pressure " + "| " + data.main.pressure + " &#13169");
+        $('.feels_like').html("Feels Like " + "| " + data.main.feels_like + " &#176" + "F");
+        $('.humidity').html("Humidity " + "| " + data.main.humidity + " %");
+        $('.max').html("Max Temperature " + "| " + data.main.temp_max + " &#176" + "F");
+        $('.min').html("Min Temperature " + "| " + data.main.temp_min + " &#176" + "F");
         // cordinates
-        $('.lat').html(data.coord.lat + " %");
-        $('.lon').html(data.coord.lon);
+        $('.lat').html("Latitude " + "| " + data.coord.lat + " %");
+        $('.lon').html("Longitude " + "| " + data.coord.lon);
         // wind
-        $('.speed').html(data.wind.speed + " mph");
-        $('.deg').html(data.wind.deg + " &#176");
+        $('.speed').html("Wind Speed " + "| " + data.wind.speed + " mph");
+        $('.deg').html("Wind " + "| " + data.wind.deg + " &#176");
         // cloudiness
-        $('.cloudiness').html(data.clouds.all + " %");
+        $('.cloudiness').html("Cloud " + "| " + data.clouds.all + " %");
 
         // weather
         let weather = $(data.weather);
@@ -78,7 +79,7 @@ $(() => {
         // console.log(data.snow);
         // looping through weather array
         for (let wArray of weather) {
-          $mainWeather.html(wArray.main);
+          $mainWeather.html("Weather " + "| " + wArray.main);
           $description.html(wArray.main + " with " + wArray.description);
           let $WeatherIcon = wArray.icon
           console.log($WeatherIcon);
