@@ -2,6 +2,7 @@ $(() => {
   let lastInfoDisplay = $('.wrapper').children().length - 1;
   let currentInfoDisplay = 0;
 
+
   $('.next').on('click', () => {
 
     $('.wrapper').children().eq(currentInfoDisplay).css('display', 'none');
@@ -33,18 +34,26 @@ $(() => {
 
       // event listener
   $("button").on('click', (event) => {
+    $(".header").css("transform", "none").css("animation-name","transitionUp")
+    .css("animation-duration", ".5s");
+
 
     const userInput = $('input[type="text"]').val();
 
 
+    $(".container").css("display","flex").css("animation-name","opacity").css("animation-duration", ".8s")
+    .css("animation-timing-function","linear")
+
 
     // time
 
-    let hr = new Date().toUTCString()
-    $('.dt').html(hr);
+    let hr = new Date(parseInt());
+        let currentTime = hr.toLocaleString();
+    // let currentTimeZone = hr.getTimezoneOffset() / 60;
+    $('.dt').html(currentTime);
 
     $.ajax({
-        url:`http://api.openweathermap.org/data/2.5/weather?zip=${userInput}&appid=530e784297febf79825bcc72dc838534`
+        url:`http://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=530e784297febf79825bcc72dc838534`
     }).then(
       (data) => {
         // let time = new Date(data.sys.sunrise);
@@ -54,7 +63,7 @@ $(() => {
         $('.cityName').html(data.name);
         $('.countryCode').html(data.sys.country);
         // $('dt').html(new Date(data.dt))
-        console.log(data);
+        // console.log(data);
         // mainTemp
         $('.temperature').html("Temperature " + "| " + data.main.temp + " &#176" + "F");
         $('.pressure').html("Pressure " + "| " + data.main.pressure + " &#13169");
@@ -92,7 +101,7 @@ $(() => {
           // console.log(wArray.main);
         }
 
-
+        $(event.currentTarget).reset()
 
       },
       (error) => {

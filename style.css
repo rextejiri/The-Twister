@@ -14,6 +14,11 @@
   /* flex-wrap: wrap; */
   /* overflow: scroll; */
 }
+/* before search button is clicked */
+.container{
+  display: none;
+}
+
 
 .header{
   display: flex;
@@ -27,12 +32,14 @@
   border-radius: 23px;
   margin-bottom: 60px;
   margin-top: 50px;
+
 }
 input{
   width: 386px;
   height: 45px;
   border-radius: 23px;
-  margin-right: -400px
+  margin-right: -400px;
+  text-align: center;
 }
 button{
   width: 70px;
@@ -140,4 +147,32 @@ button{
 }
 .next{
   margin-right: 33px;
+}
+
+/* Effects */
+
+.header{
+  animation-name: transitionDown;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  transform: translateY(240px);
+}
+
+@keyframes transitionDown {
+  0% {transform: translateY(60px);}
+  /* 25% {transform: translateY(120px);} */
+  /* 50% {transform: translateY(180px);} */
+  /* 75% {transform: translateY(220px);} */
+  100% {transform: translateY(240px);}
+}
+
+@keyframes transitionUp {
+  0% {transform: translateY(240px);}
+  100% {transform: translateY(60px);}
+}
+
+@keyframes opacity {
+  0% {opacity: .1;}
+  /* 50% {opacity: .5;} */
+  100% {opacity: 1;}
 }
