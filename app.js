@@ -13,6 +13,8 @@ $(() => {
       currentInfoDisplay = 0;
     }
     $('.wrapper').children().eq(currentInfoDisplay).css('display', 'flex');
+
+    $('.wrapper').children().eq(1).css('display', 'flex');
     // console.log($('.wrapper').children());
   });
 
