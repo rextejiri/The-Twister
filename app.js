@@ -32,16 +32,16 @@ $(() => {
     $('.wrapper').children().eq(currentInfoDisplay).css('display', 'flex');
     // console.log($('.wrapper').children());
   });
-    // declaring all parameters
 
-      // event listener
+
+      // event listener for Searchbutton
   $("button").on('click', (event) => {
     $(".header").css("transform", "none").css("animation-name","transitionUp")
     .css("animation-duration", ".5s");
 
 
     const userInput = $('input[type="text"]').val();
-
+      $('input[type="text"]').val("");
 
     $(".container").css("display","flex").css("animation-name","opacity").css("animation-duration", ".8s")
     .css("animation-timing-function","linear")
@@ -49,13 +49,14 @@ $(() => {
 
     // time
 
-    let hr = new Date(parseInt());
+    let hr = new Date();
         let currentTime = hr.toLocaleString();
     // let currentTimeZone = hr.getTimezoneOffset() / 60;
     $('.dt').html(currentTime);
 
+    /////////api call
     $.ajax({
-        url:`http://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=530e784297febf79825bcc72dc838534`
+        url:`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=530e784297febf79825bcc72dc838534`
     }).then(
       (data) => {
         // let time = new Date(data.sys.sunrise);
@@ -91,7 +92,7 @@ $(() => {
         // looping through weather array
         for (let wArray of weather) {
           $mainWeather.html("Weather " + "| " + wArray.main);
-          $description.html(wArray.main + " with " + wArray.description);
+          $description.html(" Description " + "| " + wArray.description);
           let $WeatherIcon = wArray.icon
           console.log($WeatherIcon);
           console.log(wArray);
