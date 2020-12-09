@@ -1,3 +1,13 @@
+
+
+
+
+
+body{
+  background: linear-gradient(-90deg, #465056, #465056);
+}
+
+
 .container{
   display: flex;
   flex-direction: row;
@@ -14,19 +24,58 @@
   align-content: center;
   /* flex-wrap: wrap; */
   /* overflow: scroll; */
-
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 /* before search button is clicked */
 .container{
   display: none;
-
+  font-family: serif;
+  font-weight: lighter;
 }
 
 @media (max-width: 800px) {
   .container{
     flex-direction: column;
+    height: 754px;
+    /* width: 754px; */
+    /* justify-content: space-around; */
+    align-items: center;
+    /* flex-wrap: wrap; */
+    margin: 0 auto
   }
-  .
+  .next{
+    margin-top: 0px;
+    margin-left: 33px;
+  }
+  .previous{
+    margin-top: 0px;
+    margin-left: 33px;
+  }
+  .city{
+    /* height: 700px; */
+    transform: rotate(90deg);
+    flex-direction: row;
+    min-width: inherit;
+    justify-content: space-around;
+    /* padding-top: 30px;
+    padding-bottom: 30px; */
+  }
+  .Display{
+    transform: rotate(-90deg);
+  }
+  .wrapper{
+    min-width: 416px;
+    flex-direction: column;
+    /* height: 150px; */
+  }
+  .countryCode{
+    transform: rotate(-90deg);
+    align-self: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border: 1px dashed #3D4852;
+  }
+
 }
 
 
@@ -48,28 +97,43 @@
 
 }
 .header{
+  /* background: linear-gradient(-90deg, #465056, #3B616D); */
   background: linear-gradient(-90deg, #465056, #3D4852);
-  filter: drop-shadow(0, .2,);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  /* filter: drop-shadow(0, .2,); */
 }
 input{
   width: 50%;
   height: 45px;
   /* position: relative; */
-  border-radius: 23px;
+  border-radius: 15px;
   /* margin-right: -400px; */
   text-align: center;
   justify-content: center;
+  opacity: 0.7;
   background-color: ghostwhite;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+
 }
 button{
   width: 70px;
   height: 40px;
-  background-color: white;
+    background-color: ghostwhite;
   border: 0px;
   opacity: 2px;
-  border-radius: 100%;
+  border-radius: 15px;
+  opacity: 0.7;
   margin: 0px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
   /* margin-left: -400px; */
+}
+
+button:hover{
+  transform: scale(1.2);
+  font-weight: bolder;
+  opacity: 0.4;
 }
 .city{
   background-color: gray;
@@ -84,7 +148,25 @@ button{
   margin-left: 48px;
   align-self: center;
   background: linear-gradient(-90deg, #465056, #3D4852);
-  filter: drop-shadow(0, .2,);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.appName{
+  color: ghostwhite;
+  font-weight: bold;
+  opacity: 0.6;
+  border-radius: 10PX;
+
+}
+.appName:hover{
+  font-weight: bolder;
+  transform: translateX(10px) scaleX(1.2);
+  cursor: pointer;
+  animation-name: weatherAnime;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-timing-function: ease-in;
+
 }
 
 .Display{
@@ -97,7 +179,17 @@ button{
   justify-content: center;
   align-items: center;
   background: linear-gradient(-90deg, #465056, #3B616D);
-  filter: drop-shadow(0, .2,);
+  /* filter: drop-shadow(0, .2,); */
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-timing-function: ease-in;
+  animation-name: weatherAnime;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.Display:hover{
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 /* .dateDisplay{
@@ -112,7 +204,7 @@ button{
 } */
 
 .wrapper{
-  min-width: 650px;
+  max-width: 650px;
   height: 416px;
   background-color: gray;
   border-radius: 23px;
@@ -126,7 +218,9 @@ button{
   align-self: center;
   margin-left: 66px;
   background: linear-gradient(-90deg, #465056, #3B616D);
-  filter: drop-shadow(0, .2,);
+  /* filter: drop-shadow(0, .2,); */
+  transition-property: all;
+  /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */
 }
 
 
@@ -137,15 +231,18 @@ button{
   background-color: black;
   border-radius: 23px;
   margin-left: 30px;
+  align-self: center;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  margin-left: 80px;
+  margin-left: 30px;
   margin-right: 30px;
   background: linear-gradient(-90deg, #465056, #3B616D);
   filter: drop-shadow(0, .2,);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
 }
 
 
@@ -168,14 +265,22 @@ button{
   align-items: center;
   background: linear-gradient(-90deg, #465056, #3D4852);
   filter: drop-shadow(0, .2,);
+  animation-name: weatherAnime;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-timing-function: ease-in;
 }
 
 .btn{
   display: block;
   box-sizing: border-box;
-  background-color: black;
+  /* background-color: black; */
   cursor: pointer;
-  background: linear-gradient(-90deg, #465056, #3D4852);
+  /* background: linear-gradient(-90deg, #465056, #3D4852); */
+  /* transition-property: all; */
+}
+.btn:hover{
+  transform: scale(2);
 }
 .previous{
   margin-left: 48px;
@@ -185,12 +290,47 @@ button{
 }
 
 /* Effects */
+.infoDisplay:hover{
+  /* animation-name: weatherAnime;
+  animation-duration: 10s; */
+  transform: scale(1);
+}
+.wrapper:hover{
+ cursor: pointer;
+}
+.container{
+
+}
+.valueDisplay:hover{
+  transform: scale(1.3);
+  cursor: pointer;
+}
 
 .header{
   animation-name: transitionDown;
   animation-duration: 1s;
   animation-timing-function: linear;
   transform: translateY(240px);
+  transition-property: all;
+  transition-duration: 4s;
+}
+.header:hover{
+  background:linear-gradient(-90deg, #3B616D, #465056 );
+  cursor: pointer;
+
+  transition-timing-function: ease;
+}
+input:hover{
+  transform: scale(1.2);
+  text-shadow:
+  cursor:pointer;
+  text-shadow: 1px 1px 2px white;
+  /* background-color: #465056; */
+  /* color: white; */
+  opacity: 0.4;
+  font-size: 1em;
+  font-weight: bold;
+
 }
 
 @keyframes transitionDown {
@@ -210,4 +350,18 @@ button{
   0% {opacity: .1;}
   /* 50% {opacity: .5;} */
   100% {opacity: 1;}
+}
+
+@keyframes weatherAnime {
+  0% {background-color: #3B616D;}
+  10% {background: linear-gradient(70deg, #3D4852, #3D4852,#22ACFA);}
+  20% {background: linear-gradient(80deg, #3D4852, #3D4852,#22ACFA);}
+  30% {background: linear-gradient(90deg, #3D4852, #3D4852,#22ACFA);}
+  40% {background: linear-gradient(-900deg, #3D4852, #3D4852,#22ACFA);}
+  50% {background: linear-gradient(-80deg, #3D4852, #3D4852,#22ACFA);}
+  60% {background: linear-gradient(-70deg, #3D4852, #3D4852,#22ACFA);}
+  70% {background: linear-gradient(-50deg, #3D4852, #3D4852,#22ACFA);}
+  80% {background: linear-gradient(-40deg, #3D4852, #3D4852,#22ACFA);}
+  90% {background: linear-gradient(-300deg, #3D4852, #3D4852,#22ACFA);}
+  100% {background-color: #3B616D;}
 }

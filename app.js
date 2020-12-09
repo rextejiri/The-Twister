@@ -76,7 +76,7 @@ $(() => {
         $('.min').html("Min Temperature " + "| " + data.main.temp_min + " &#176" + "F");
         // cordinates
         $('.lat').html("Latitude " + "| " + data.coord.lat + " %");
-        $('.lon').html("Longitude " + "| " + data.coord.lon);
+        $('.lon').html("Longitude " + "| " + data.coord.lon + " %");
         // wind
         $('.speed').html("Wind Speed " + "| " + data.wind.speed + " mph");
         $('.deg').html("Wind " + "| " + data.wind.deg + " &#176");
